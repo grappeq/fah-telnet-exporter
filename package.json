@@ -1,0 +1,16 @@
+{
+  "name": "fah-telnet-exporter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "morgan": "~1.9.1",
+    "telnet-client": "^2.0.7"
+  }
+}
