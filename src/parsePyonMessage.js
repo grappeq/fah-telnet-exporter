@@ -9,7 +9,7 @@ const parsePyON = (payload) => {
 // Following pattern described in the docs:
 // https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API#detecting-pyon-messages
 const regex = /\nPyON ([0-9]) ([a-z]*)\n(.*)\n---\n/gs;
-export const parsePyONMessage = (stringToParse) => {
+const parsePyONMessage = (stringToParse) => {
   const matches = Array.from(stringToParse.matchAll(regex));
   if (matches.length === 1) {
     const [, version, messageName, content] = matches[0];
@@ -22,3 +22,5 @@ export const parsePyONMessage = (stringToParse) => {
     throw new Error('Failed to parse PyON');
   }
 };
+
+export default parsePyONMessage;

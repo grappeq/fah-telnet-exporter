@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node src/www"
+    "start": "node src/www",
+    "test": "jest"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
