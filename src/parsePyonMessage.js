@@ -1,5 +1,7 @@
 const parsePyON = (payload) => {
   return JSON.parse(
+      // This is super shitty but should work most of the time
+      // and proper implementation would be complex
       payload.replace(/None/g, 'null').
           replace(/False/g, 'false').
           replace(/True/g, 'true'),
@@ -8,7 +10,7 @@ const parsePyON = (payload) => {
 
 // Following pattern described in the docs:
 // https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API#detecting-pyon-messages
-const regex = /\nPyON ([0-9]) ([a-z]*)\n(.*)\n---\n/gs;
+const regex = /\nPyON ([0-9]*) ([a-zA-Z0-9\-_]*)\n(.*)\n---\n/gs;
 const parsePyONMessage = (stringToParse) => {
   const matches = Array.from(stringToParse.matchAll(regex));
   if (matches.length === 1) {

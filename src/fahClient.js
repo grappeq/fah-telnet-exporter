@@ -8,6 +8,9 @@ const DEFAULT_CONN_PARAMS = {
   timeout: 1500,
   shellPrompt: '> ',
   initialLFCR: true,
+  socketConnectOptions: {
+    autoSelectFamily: true,
+  },
 };
 
 const DEFAULT_EXEC_PARAMS = {
@@ -26,7 +29,7 @@ const COMMANDS = Object.freeze({
 });
 
 export default class FahTelnetClient {
-  constructor({hostname: host, port}) {
+  constructor({hostname: host, port} = {hostname: 'localhost', port: 36330}) {
     this.connectionParams = Object.assign({}, DEFAULT_CONN_PARAMS,
         {host, port});
     this.execParams = DEFAULT_EXEC_PARAMS;
@@ -35,19 +38,22 @@ export default class FahTelnetClient {
   async connect() {
     this.connection = new Telnet();
     await this.connection.connect(this.connectionParams, error => {
-      console.log('Failed to connect: ', error);
+      console.error('Failed to connect: ', error);
     });
-    console.log('Connected to FAH telnet server');
+    console.debug('Connected to FAH telnet server');
   }
 
   async fetchAllInfo() {
     const {content: slotInfo} = await this.fetchInfo(this.connection,
         COMMANDS.SLOT_INFO);
-    const {content: simulationInfo} = await this.fetchInfo(this.connection,
-        COMMANDS.SIMULATION_INFO);
     const {content: queueInfo} = await this.fetchInfo(this.connection,
         COMMANDS.QUEUE_INFO);
+    const simulationInfo = await this.fetchSimulationInfo();
     return {slotInfo, simulationInfo, queueInfo};
+  }
+
+  async fetchSimulationInfo() {
+    return {};
   }
 
   async disconnect() {
@@ -55,9 +61,10 @@ export default class FahTelnetClient {
   }
 
   async fetchInfo(connection, command) {
-    return connection.exec(command, DEFAULT_EXEC_PARAMS).
-        then((response) => parsePyONMessage(response));
+    console.debug(`Fetching ${command}`);
+    return await connection.exec(command, this.execParams).
+        then((response) => parsePyONMessage(response))
+        .catch((e)=>{throw e;});
   };
 
 }
-
