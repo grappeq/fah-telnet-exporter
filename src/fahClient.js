@@ -1,13 +1,13 @@
 import {Telnet} from 'telnet-client';
 import parsePyONMessage from './parsePyonMessage.js';
 
-// these parameters are just examples and most probably won't work for your use-case.
+const DEFAULT_HOSTNAME = 'localhost';
+const DEFAULT_PORT = 36330;
 const DEFAULT_CONN_PARAMS = {
-  host: 'localhost',
-  port: 36330,
   timeout: 1500,
   shellPrompt: '> ',
   initialLFCR: true,
+  ors: '\r\n',
   socketConnectOptions: {
     autoSelectFamily: true,
   },
@@ -29,9 +29,12 @@ const COMMANDS = Object.freeze({
 });
 
 export default class FahTelnetClient {
-  constructor({hostname: host, port} = {hostname: 'localhost', port: 36330}) {
+  constructor({hostname, port} = {}) {
     this.connectionParams = Object.assign({}, DEFAULT_CONN_PARAMS,
-        {host, port});
+        {
+          host: hostname || DEFAULT_HOSTNAME,
+          port: port || DEFAULT_PORT,
+        });
     this.execParams = DEFAULT_EXEC_PARAMS;
   }
 
@@ -63,8 +66,9 @@ export default class FahTelnetClient {
   async fetchInfo(connection, command) {
     console.debug(`Fetching ${command}`);
     return await connection.exec(command, this.execParams).
-        then((response) => parsePyONMessage(response))
-        .catch((e)=>{throw e;});
+        then((response) => parsePyONMessage(response)).catch((e) => {
+          console.error('Failed to fetch data: ', e);
+          throw e;
+        });
   };
-
 }
