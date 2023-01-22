@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import http from 'http';
-import app from './app.js';
+import app from './app.ts';
 
 /**
  * Get port from environment and store in Express.
@@ -22,7 +22,6 @@ var server = http.createServer(app);
 
 server.listen(port);
 server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -70,15 +69,4 @@ function onError(error) {
     default:
       throw error;
   }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
 }

@@ -1,8 +1,8 @@
-import express from 'express';
+import express, {Express} from 'express';
 import logger from 'morgan';
-import indexRouter from './routes.js';
+import indexRouter from './routes';
 
-const app = express();
+const app: Express = express();
 
 app.use(logger('dev'));
 app.use(express.json());

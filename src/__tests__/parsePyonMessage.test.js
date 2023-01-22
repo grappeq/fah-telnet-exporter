@@ -1,4 +1,4 @@
-import parsePyONMessage from '../parsePyonMessage.js';
+import parsePyONMessage from '../parsePyonMessage.ts';
 import {describe, it} from 'mocha';
 import {expect} from 'chai';
 

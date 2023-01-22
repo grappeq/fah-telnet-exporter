@@ -1,5 +1,5 @@
 import {assert, expect} from 'chai';
-import FahTelnetClient from '../fahClient.js';
+import FahTelnetClient from '../fahClient';
 import {describe, it} from 'mocha';
 import sinon from 'sinon';
 
