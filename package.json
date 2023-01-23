@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev": "npx nodemon",
     "start": "npx ts-node ./src/www",
-    "test": "mocha"
+    "test": "mocha --require ts-node/register"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

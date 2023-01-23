@@ -36,3 +36,23 @@ export interface QueueInfo {
     "tpf": string,
     "basecredit": string,
 }
+
+export interface PrometheusLabel {
+    name: string;
+    value: string | number;
+}
+
+export enum PrometheusMetricType {
+    COUNTER = "counter",
+    GAUGE = "gauge",
+    HISTOGRAM = "histogram",
+    SUMMARY = "summary",
+}
+
+export interface PrometheusMetric {
+    name: string;
+    value: number;
+    labels?: PrometheusLabel[];
+    description?: string;
+    type?: PrometheusMetricType;
+}

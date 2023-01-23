@@ -1,6 +1,7 @@
 import FahTelnetClient from './fahClient';
 import mapToPromMetrics from './mapToPromMetrics';
 import express from 'express';
+import renderPromMetrics from "./renderPromMetrics";
 
 const router = express.Router();
 
@@ -31,7 +32,10 @@ router.get('/metrics', async (req, res) => {
         await client.connect();
         const fetchedInfo = await client.fetchAllInfo();
         await client.disconnect();
-        res.send(mapToPromMetrics(fetchedInfo));
+        const mappedMetrics = mapToPromMetrics(fetchedInfo);
+        const renderedMetrics = renderPromMetrics(mappedMetrics);
+        console.log(renderedMetrics);
+        res.send(renderedMetrics);
     } catch (e) {
         res.status(500).send(e);
     }

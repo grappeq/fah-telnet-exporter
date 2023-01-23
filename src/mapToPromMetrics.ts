@@ -1,24 +1,4 @@
-import {SlotInfo, QueueInfo} from './types';
-
-interface PrometheusLabel {
-    name: string;
-    value: string | number;
-}
-
-enum PrometheusMetricType {
-    COUNTER = "counter",
-    GAUGE = "gauge",
-    HISTOGRAM = "histogram",
-    SUMMARY = "summary",
-}
-
-interface PrometheusMetric {
-    name: string;
-    value: number;
-    labels?: PrometheusLabel[];
-    description?: string;
-    type?: PrometheusMetricType;
-}
+import {PrometheusMetric, PrometheusMetricType, QueueInfo, SlotInfo} from './types';
 
 const LABELS = {
     SLOT: 'slot',
