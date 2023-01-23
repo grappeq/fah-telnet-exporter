@@ -33,7 +33,9 @@ export default class FahTelnetClient {
     execParams: ExecOptions;
     connection: Telnet;
 
-    constructor({hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT}) {
+    constructor(connectionTarget?: { hostname?: string, port?: number }) {
+        const hostname = !connectionTarget || connectionTarget.hostname === undefined ? DEFAULT_HOSTNAME : connectionTarget.hostname;
+        const port = !connectionTarget || connectionTarget.port === undefined ? DEFAULT_PORT : connectionTarget.port;
         this.connectionParams = Object.assign({}, DEFAULT_CONN_PARAMS,
             {
                 host: hostname,
@@ -52,9 +54,9 @@ export default class FahTelnetClient {
 
     async fetchAllInfo() {
         const {content: slotsInfo} = await this.fetchInfo(Command.SlotInfo);
-        const {content: queueInfo} = await this.fetchInfo(Command.QueueInfo);
+        const {content: queuesInfo} = await this.fetchInfo(Command.QueueInfo);
         const simulationInfo = await this.fetchSimulationInfo();
-        return {slotsInfo, simulationInfo, queueInfo};
+        return {slotsInfo, simulationInfo, queuesInfo};
     }
 
     async fetchSimulationInfo() {

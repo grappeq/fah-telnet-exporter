@@ -13,9 +13,9 @@ router.get('/raw', async (req, res) => {
         }
         const client = new FahTelnetClient({hostname: target, port});
         await client.connect();
-        const {slotsInfo, queueInfo, simulationInfo} = await client.fetchAllInfo();
+        const {slotsInfo, queuesInfo, simulationInfo} = await client.fetchAllInfo();
         await client.disconnect();
-        res.send({slotInfo: slotsInfo, queueInfo, simulationInfo});
+        res.send({slotInfo: slotsInfo, queuesInfo, simulationInfo});
     } catch (e) {
         res.status(500).send(e);
     }

@@ -1,0 +1,640 @@
+[
+  {
+    "name": "queue_project",
+    "value": 18406,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_percent_done",
+    "value": 2,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_points_per_day",
+    "value": 90523,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_credit_estimate",
+    "value": 77950,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_credit_base",
+    "value": 58110,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_frames_total",
+    "value": 100,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_frames_done",
+    "value": 2,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_eta_days",
+    "value": 20,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      }
+    ]
+  },
+  {
+    "name": "queue_state",
+    "value": 1,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "00"
+      },
+      {
+        "name": "slot",
+        "value": "00"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18406
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 5
+      },
+      {
+        "name": "work_unit_run",
+        "value": 62
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 80
+      },
+      {
+        "name": "work_unit",
+        "value": "18406(62,5,80)"
+      },
+      {
+        "name": "state",
+        "value": "READY"
+      }
+    ]
+  },
+  {
+    "name": "queue_project",
+    "value": 18448,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_percent_done",
+    "value": 0,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_points_per_day",
+    "value": 37239,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_credit_estimate",
+    "value": 55859,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_credit_base",
+    "value": 55859,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_frames_total",
+    "value": 0,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_frames_done",
+    "value": 0,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_eta_days",
+    "value": 1.5,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      }
+    ]
+  },
+  {
+    "name": "queue_state",
+    "value": 1,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "queue",
+        "value": "01"
+      },
+      {
+        "name": "slot",
+        "value": "01"
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18448
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 68
+      },
+      {
+        "name": "work_unit_run",
+        "value": 3
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 367
+      },
+      {
+        "name": "work_unit",
+        "value": "18448(3,68,367)"
+      },
+      {
+        "name": "state",
+        "value": "RUNNING"
+      }
+    ]
+  }
+]
