@@ -1,6 +1,5 @@
 import {Telnet, ConnectOptions, ExecOptions} from 'telnet-client';
 import parsePyONMessage from './parsePyonMessage';
-import {hostname} from "os";
 
 const DEFAULT_HOSTNAME = 'localhost';
 const DEFAULT_PORT = 36330;
@@ -52,10 +51,10 @@ export default class FahTelnetClient {
     }
 
     async fetchAllInfo() {
-        const {content: slotInfo} = await this.fetchInfo(Command.SlotInfo);
+        const {content: slotsInfo} = await this.fetchInfo(Command.SlotInfo);
         const {content: queueInfo} = await this.fetchInfo(Command.QueueInfo);
         const simulationInfo = await this.fetchSimulationInfo();
-        return {slotInfo, simulationInfo, queueInfo};
+        return {slotsInfo, simulationInfo, queueInfo};
     }
 
     async fetchSimulationInfo() {

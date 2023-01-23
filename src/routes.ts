@@ -1,6 +1,6 @@
 import FahTelnetClient from './fahClient';
-import mapToPromMetrics from './mapToPromMetrics.js';
-import express, {Express} from 'express';
+import mapToPromMetrics from './mapToPromMetrics';
+import express from 'express';
 
 const router = express.Router();
 
@@ -13,9 +13,9 @@ router.get('/raw', async (req, res) => {
         }
         const client = new FahTelnetClient({hostname: target, port});
         await client.connect();
-        const {slotInfo, queueInfo, simulationInfo} = await client.fetchAllInfo();
+        const {slotsInfo, queueInfo, simulationInfo} = await client.fetchAllInfo();
         await client.disconnect();
-        res.send({slotInfo, queueInfo, simulationInfo});
+        res.send({slotInfo: slotsInfo, queueInfo, simulationInfo});
     } catch (e) {
         res.status(500).send(e);
     }

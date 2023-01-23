@@ -1,5 +1,5 @@
 export default {
-  'slotInfo': [
+  'slotsInfo': [
     {
       'id': '00',
       'status': 'PAUSED',
@@ -8,17 +8,17 @@ export default {
         'paused': true,
       },
       'reason': 'by user',
-      'idle': false,
+      'idle': true,
     },
     {
       'id': '01',
-      'status': 'PAUSED',
+      'status': 'RUNNING',
       'description': 'gpu:10:0 TU106 [Geforce RTX 2060]',
       'options': {
         'pci-bus': '10',
         'pci-slot': '0',
       },
-      'reason': 'finished',
+      'reason': '',
       'idle': false,
     },
   ],

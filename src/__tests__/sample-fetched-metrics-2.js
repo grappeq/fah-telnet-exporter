@@ -1,5 +1,5 @@
 export default {
-  'slotInfo': [
+  'slotsInfo': [
     {
       'id': '00',
       'status': 'RUNNING',

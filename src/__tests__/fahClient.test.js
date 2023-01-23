@@ -20,11 +20,11 @@ describe('FahTelnetClient', function() {
       ]);
       // WHEN
       await client.connect();
-      const {slotInfo, queueInfo, simulationInfo} = await client.fetchAllInfo();
+      const {slotsInfo, queueInfo, simulationInfo} = await client.fetchAllInfo();
       // THEN
       assert(client.connect.called);
       assert(client.fetchInfo.called);
-      expect(slotInfo).to.deep.equal({'some': 'json object'});
+      expect(slotsInfo).to.deep.equal({'some': 'json object'});
       expect(queueInfo).to.deep.equal({'some': 'json object'});
       expect(simulationInfo).to.deep.equal([
         {'some': 'json object'},
