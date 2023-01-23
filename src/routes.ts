@@ -34,7 +34,6 @@ router.get('/metrics', async (req, res) => {
         await client.disconnect();
         const mappedMetrics = mapToPromMetrics(fetchedInfo);
         const renderedMetrics = renderPromMetrics(mappedMetrics);
-        console.log(renderedMetrics);
         res.send(renderedMetrics);
     } catch (e) {
         res.status(500).send(e);

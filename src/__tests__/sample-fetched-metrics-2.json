@@ -1,0 +1,90 @@
+{
+  "slotsInfo": [
+    {
+      "id": "00",
+      "status": "RUNNING",
+      "description": "cpu:10",
+      "options": {
+        "paused": false
+      },
+      "reason": "",
+      "idle": false
+    },
+    {
+      "id": "01",
+      "status": "RUNNING",
+      "description": "gpu:10:0 TU106 [Geforce RTX 2060]",
+      "options": {
+        "pci-bus": "10",
+        "pci-slot": "0"
+      },
+      "reason": "",
+      "idle": false
+    }
+  ],
+  "queueInfo": {
+    "version": "1",
+    "messageName": "units",
+    "content": [
+      {
+        "id": "00",
+        "state": "RUNNING",
+        "error": "NO_ERROR",
+        "project": 18404,
+        "run": 115,
+        "clone": 1,
+        "gen": 128,
+        "core": "0xa8",
+        "unit": "0x0000000100000080000047e400000073",
+        "percentdone": "23.01%",
+        "eta": "17 hours 36 mins",
+        "ppd": "78163",
+        "creditestimate": "74454",
+        "waitingon": "",
+        "nextattempt": "0.00 secs",
+        "timeremaining": "3.01 days",
+        "totalframes": 100,
+        "framesdone": 23,
+        "assigned": "2023-01-19T14:25:59Z",
+        "timeout": "2023-01-23T14:25:59Z",
+        "deadline": "2023-01-23T19:13:59Z",
+        "ws": "129.32.209.203",
+        "cs": "129.32.209.205",
+        "attempts": 0,
+        "slot": "00",
+        "tpf": "13 mins 43 secs",
+        "basecredit": "58110"
+      },
+      {
+        "id": "01",
+        "state": "RUNNING",
+        "error": "NO_ERROR",
+        "project": 18448,
+        "run": 3,
+        "clone": 68,
+        "gen": 367,
+        "core": "0x22",
+        "unit": "0x000000440000016f0000481000000003",
+        "percentdone": "0.00%",
+        "eta": "1.50 days",
+        "ppd": "37239",
+        "creditestimate": "55859",
+        "waitingon": "",
+        "nextattempt": "0.00 secs",
+        "timeremaining": "2.00 days",
+        "totalframes": 0,
+        "framesdone": 0,
+        "assigned": "2023-01-20T18:52:54Z",
+        "timeout": "2023-01-22T06:52:54Z",
+        "deadline": "2023-01-22T18:52:54Z",
+        "ws": "129.32.209.202",
+        "cs": "129.32.209.207",
+        "attempts": 0,
+        "slot": "01",
+        "tpf": "21 mins 36 secs",
+        "basecredit": "55859"
+      }
+    ]
+  },
+  "simulationInfo": {}
+}

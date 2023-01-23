@@ -5,11 +5,11 @@
   "scripts": {
     "start:dev": "npx nodemon",
     "start": "npx ts-node ./src/www",
+    "start:dist": "node ./build/www.js",
+    "build": "npx tsc  --project tsconfig.build.json",
     "test": "mocha --require ts-node/register"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
     "express": "^4.18.2",
     "morgan": "~1.9.1",
     "telnet-client": "^2.0.7"

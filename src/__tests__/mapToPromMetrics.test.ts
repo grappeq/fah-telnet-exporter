@@ -1,7 +1,7 @@
 import {describe, it} from 'mocha';
 import {expect} from 'chai';
 import mapToPromMetrics from '../mapToPromMetrics';
-import sampleFetchedMetrics1 from './sample-fetched-metrics-1.js';
+import sampleFetchedMetrics1 from './sample-fetched-metrics-1.json';
 import expectedMappedQueueMetrics from './mappedQueueMetrics.json'
 
 
