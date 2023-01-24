@@ -10,8 +10,8 @@ describe('renderPromMetrics', function () {
             value: 2137,
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# HELP fancy_metric Fancy Metric\n' +
-            'fancy_metric 2137'
+            '# HELP fah_fancy_metric Fancy Metric\n' +
+            'fah_fancy_metric 2137'
         );
     });
 
@@ -22,8 +22,8 @@ describe('renderPromMetrics', function () {
             value: 2137,
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# TYPE fancy_metric gauge\n' +
-            'fancy_metric 2137'
+            '# TYPE fah_fancy_metric gauge\n' +
+            'fah_fancy_metric 2137'
         );
     });
 
@@ -36,7 +36,7 @@ describe('renderPromMetrics', function () {
             ]
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            'fancy_metric{jp2="gmd"} 2137'
+            'fah_fancy_metric{jp2="gmd"} 2137'
         );
     });
 
@@ -50,7 +50,7 @@ describe('renderPromMetrics', function () {
             ]
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            'fancy_metric{jp1="trial",jp2="gmd"} 2137'
+            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137'
         );
     });
 
@@ -66,9 +66,9 @@ describe('renderPromMetrics', function () {
             description: "Fancy Metric",
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# HELP fancy_metric Fancy Metric\n' +
-            '# TYPE fancy_metric histogram\n' +
-            'fancy_metric{jp1="trial",jp2="gmd"} 2137'
+            '# HELP fah_fancy_metric Fancy Metric\n' +
+            '# TYPE fah_fancy_metric histogram\n' +
+            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137'
         );
     });
 
@@ -99,14 +99,14 @@ describe('renderPromMetrics', function () {
         ];
         const renderedOutput = renderPromMetrics(metrics);
         expect(renderedOutput).to.deep.equal(
-            '# HELP fancy_metric Fancy Metric\n' +
-            '# TYPE fancy_metric histogram\n' +
-            'fancy_metric{jp1="trial",jp2="gmd"} 2137\n' +
+            '# HELP fah_fancy_metric Fancy Metric\n' +
+            '# TYPE fah_fancy_metric histogram\n' +
+            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137\n' +
             '\n' +
-            '# HELP another_metric Another Metric\n' +
-            'another_metric 2137\n' +
+            '# HELP fah_another_metric Another Metric\n' +
+            'fah_another_metric 2137\n' +
             '\n' +
-            'the_best_metric{kupa="100"} 2137'
+            'fah_the_best_metric{kupa="100"} 2137'
         );
     });
 });

@@ -37,6 +37,33 @@ export interface QueueInfo {
     "basecredit": string,
 }
 
+export interface FAHInfo {
+    slotsInfo: SlotInfo[],
+    queuesInfo: QueueInfo[],
+    simulationInfo: object,
+}
+
+export interface SimulationInfo {
+    "user": string,
+    "team": string,
+    "project": number,
+    "run": number,
+    "clone": number,
+    "gen": number,
+    "core_type": number,
+    "core": string,
+    "total_iterations": number,
+    "iterations_done": number,
+    "energy": number,
+    "temperature": number,
+    "start_time": string,
+    "timeout": number,
+    "deadline": number,
+    "eta": number,
+    "progress": number,
+    "slot": number
+}
+
 export interface PrometheusLabel {
     name: string;
     value: string | number;

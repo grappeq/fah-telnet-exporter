@@ -16,10 +16,7 @@ describe('FahTelnetClient', function() {
         'content': {'some': 'json object'},
       });
       // @ts-ignore
-      client.fetchSimulationInfo = sinon.fake.returns([
-        {'some': 'json object'},
-        {'some': 'json object'},
-      ]);
+      client.fetchSimulationInfo = sinon.fake.returns( [{'some': 'json object'},{'some': 'json object'}]);
       // WHEN
       await client.connect();
       const {slotsInfo, queuesInfo, simulationInfo} = await client.fetchAllInfo();

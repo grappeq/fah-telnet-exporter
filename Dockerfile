@@ -16,6 +16,6 @@ RUN npm install --production
 COPY --from=build /usr/fah-telnet-exporter/build ./build
 RUN chmod u+x /usr/fah-telnet-exporter/build/www.js
 
-EXPOSE 3000
+EXPOSE 3003
 
 ENTRYPOINT ["/usr/fah-telnet-exporter/build/www.js"]

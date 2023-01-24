@@ -9,6 +9,8 @@ For details see: https://prometheus.io/docs/instrumenting/exposition_formats/#te
 
 import {PrometheusLabel, PrometheusMetric} from "./types";
 
+const METRIC_PREFIX = 'fah_';
+
 const renderLabelsString = (labels: PrometheusLabel[]): string => {
     const labelStrings = labels.map(({name, value}) => `${name}="${value}"`);
     const labelStringsCombined = labelStrings.join(',')
@@ -16,15 +18,16 @@ const renderLabelsString = (labels: PrometheusLabel[]): string => {
 };
 
 const renderMetric = (metric: PrometheusMetric): string => {
+    const fullMetricName = `${METRIC_PREFIX}${metric.name}`;
     const str = [];
     if (metric.description) {
-        str.push(`# HELP ${metric.name} ${metric.description}`)
+        str.push(`# HELP ${fullMetricName} ${metric.description}`)
     }
     if (metric.type) {
-        str.push(`# TYPE ${metric.name} ${metric.type}`)
+        str.push(`# TYPE ${fullMetricName} ${metric.type}`)
     }
     const labelString = metric.labels ? renderLabelsString(metric.labels) : '';
-    str.push(`${metric.name}${labelString} ${metric.value}`)
+    str.push(`${fullMetricName}${labelString} ${metric.value}`)
     return str.join('\n');
 };
 
