@@ -1,11 +1,11 @@
 const parsePyON = (payload: string) => {
-  return JSON.parse(
-      // This is super shitty but should work most of the time
-      // and proper implementation would be complex
-      payload.replace(/None/g, 'null').
-          replace(/False/g, 'false').
-          replace(/True/g, 'true'),
-  );
+  // This is super shitty but should work most of the time
+  // and proper implementation would be complex
+  const normalizedPayload = payload.replace(/None/g, 'null').
+  replace(/False/g, 'false').
+  replace(/True/g, 'true');
+
+  return JSON.parse(normalizedPayload);
 };
 
 export interface ParsedFahMessage<Type> {

@@ -3,10 +3,13 @@ import mapToPromMetrics from './mapToPromMetrics';
 import express, {Request, Response} from 'express';
 import renderPromMetrics from "./renderPromMetrics";
 import {FAHInfo} from "./types";
+import config from './config';
 
 const router = express.Router();
 
 const DEFAULT_PORT = 36330;
+
+const {fahAuthPassword} = config;
 
 const handleFetchingMetrics = async (req: Request, res: Response) : Promise<FAHInfo> => {
     const {target} = <any> req.query;
@@ -15,7 +18,7 @@ const handleFetchingMetrics = async (req: Request, res: Response) : Promise<FAHI
         res.status(400).json({error: 'Invalid query params'});
         throw {status: 400, message: 'Invalid query params'};
     }
-    const client = new FahTelnetClient({hostname: target, port: providedPort || DEFAULT_PORT});
+    const client = new FahTelnetClient({hostname: target, port: providedPort || DEFAULT_PORT}, fahAuthPassword);
     await client.connect();
     const fetchedInfo = await client.fetchAllInfo();
     await client.disconnect();
