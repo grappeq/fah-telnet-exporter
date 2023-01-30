@@ -10,7 +10,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -45,7 +45,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -80,7 +80,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -115,7 +115,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -150,7 +150,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -185,7 +185,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -220,7 +220,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -255,7 +255,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -290,7 +290,7 @@
       },
       {
         "name": "slot",
-        "value": "00"
+        "value": 0
       },
       {
         "name": "work_unit_project",
@@ -329,7 +329,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -364,7 +364,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -399,7 +399,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -434,7 +434,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -469,7 +469,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -504,7 +504,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -539,7 +539,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -574,7 +574,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",
@@ -609,7 +609,7 @@
       },
       {
         "name": "slot",
-        "value": "01"
+        "value": 1
       },
       {
         "name": "work_unit_project",

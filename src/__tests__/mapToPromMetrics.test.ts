@@ -20,7 +20,7 @@ describe('mapToPromMetrics', function () {
             value: 1,
             type: 'gauge',
             labels: [
-                {name: 'slot', value: '00'},
+                {name: 'slot', value: 0},
             ]
         });
         expect(mappedMetrics).to.deep.include({
@@ -28,7 +28,7 @@ describe('mapToPromMetrics', function () {
             value: 0,
             type: 'gauge',
             labels: [
-                {name: 'slot', value: '01'},
+                {name: 'slot', value: 1},
             ]
         });
         expect(mappedMetrics).to.deep.include({
@@ -36,7 +36,7 @@ describe('mapToPromMetrics', function () {
             value: 0,
             type: 'gauge',
             labels: [
-                {name: 'slot', value: '00'},
+                {name: 'slot', value: 0},
             ]
         });
         expect(mappedMetrics).to.deep.include({
@@ -44,14 +44,14 @@ describe('mapToPromMetrics', function () {
             value: 1,
             type: 'gauge',
             labels: [
-                {name: 'slot', value: '01'},
+                {name: 'slot', value: 1},
             ]
         });
         expect(mappedMetrics).to.deep.include({
             name: 'slot_status',
             value: 1,
             labels: [
-                {name: 'slot', value: '00'},
+                {name: 'slot', value: 0},
                 {name: 'status', value: 'PAUSED'},
             ]
         });
@@ -59,7 +59,7 @@ describe('mapToPromMetrics', function () {
             name: 'slot_status',
             value: 1,
             labels: [
-                {name: 'slot', value: '01'},
+                {name: 'slot', value: 1},
                 {name: 'status', value: 'RUNNING'},
             ]
         });

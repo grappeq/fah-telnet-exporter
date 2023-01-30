@@ -20,7 +20,7 @@ const mapSlotsInfo = (slots: SlotInfo[]): PrometheusMetric[] => slots.map((slot)
         value: slot.idle ? 1 : 0,
         type: PrometheusMetricType.GAUGE,
         labels: [
-            {name: LABELS.SLOT, value: slot.id},
+            {name: LABELS.SLOT, value: parseInt(slot.id)},
         ]
     },
     {
@@ -28,14 +28,14 @@ const mapSlotsInfo = (slots: SlotInfo[]): PrometheusMetric[] => slots.map((slot)
         value: slot.status === 'RUNNING' ? 1 : 0,
         type: PrometheusMetricType.GAUGE,
         labels: [
-            {name: LABELS.SLOT, value: slot.id},
+            {name: LABELS.SLOT, value: parseInt(slot.id)},
         ]
     },
     {
         name: 'slot_status',
         value: 1,
         labels: [
-            {name: LABELS.SLOT, value: slot.id},
+            {name: LABELS.SLOT, value: parseInt(slot.id)},
             {name: LABELS.STATUS, value: slot.status},
         ]
     }
@@ -44,7 +44,7 @@ const mapSlotsInfo = (slots: SlotInfo[]): PrometheusMetric[] => slots.map((slot)
 const mapQueuesInfo = (queues: QueueInfo[]): PrometheusMetric[] => queues.map((queue) => {
     const labels = [
         {name: LABELS.QUEUE, value: queue.id},
-        {name: LABELS.SLOT, value: queue.slot},
+        {name: LABELS.SLOT, value: parseInt(queue.slot)},
         {name: LABELS.WORK_UNIT_PROJECT, value: queue.project},
         {name: LABELS.WORK_UNIT_CLONE, value: queue.clone},
         {name: LABELS.WORK_UNIT_RUN, value: queue.run},
