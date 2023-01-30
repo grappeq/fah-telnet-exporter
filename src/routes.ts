@@ -18,7 +18,8 @@ const handleFetchingMetrics = async (req: Request, res: Response) : Promise<FAHI
         res.status(400).json({error: 'Invalid query params'});
         throw {status: 400, message: 'Invalid query params'};
     }
-    const client = new FahTelnetClient({hostname: target, port: providedPort || DEFAULT_PORT}, fahAuthPassword);
+    const password = <string>(req.query.password !== undefined ? req.query.password : fahAuthPassword);
+    const client = new FahTelnetClient({hostname: target, port: providedPort || DEFAULT_PORT}, password);
     await client.connect();
     const fetchedInfo = await client.fetchAllInfo();
     await client.disconnect();
@@ -29,7 +30,7 @@ const handleFetchingMetrics = async (req: Request, res: Response) : Promise<FAHI
 router.get('/raw', async (req, res, next) => {
     try {
         const fetchedInfo = await handleFetchingMetrics(req, res);
-        res.send(fetchedInfo);
+        res.json(fetchedInfo);
     } catch (e) {
         next(e);
     }

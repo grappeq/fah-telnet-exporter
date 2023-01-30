@@ -83,3 +83,12 @@ export interface PrometheusMetric {
     description?: string;
     type?: PrometheusMetricType;
 }
+
+export class HttpRenderableError extends Error {
+    statusCode: number;
+
+    constructor({message, statusCode}: {message: string, statusCode: number}) {
+        super(message);
+        this.statusCode = statusCode;
+    }
+}

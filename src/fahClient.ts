@@ -1,6 +1,6 @@
 import {Telnet, ConnectOptions, ExecOptions} from 'telnet-client';
 import parsePyONMessage, {ParsedFahMessage} from './parsePyonMessage';
-import {FAHInfo, QueueInfo, SimulationInfo, SlotInfo} from "./types";
+import {FAHInfo, HttpRenderableError, QueueInfo, SimulationInfo, SlotInfo} from "./types";
 
 const DEFAULT_HOSTNAME = 'localhost';
 const DEFAULT_PORT = 36330;
@@ -83,8 +83,13 @@ export default class FahTelnetClient {
         return this.connection.exec(`${Command.Auth} ${this.authPassword}`, this.execParams)
             .then((response: string) => {
                 if (response.trim() !== 'OK') {
-                    throw new Error(`Failed to authenticate to F@H server: ${response}`);
+                    console.error('Failed to authenticate to F@H server. Response received: ' + response);
+                    throw new HttpRenderableError({statusCode:403, message: 'Failed to authenticate to F@H server'});
                 }
+            })
+            .catch(err => {
+                console.error('Failed to authenticate to F@H server', err);
+                throw new HttpRenderableError({statusCode:403, message: 'Failed to authenticate to F@H server'});
             });
     }
 
