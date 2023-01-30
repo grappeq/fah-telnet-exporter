@@ -1,4 +1,4 @@
-import {PrometheusMetric, PrometheusMetricType, QueueInfo, SlotInfo} from './types';
+import {FAHInfo, PrometheusMetric, PrometheusMetricType, QueueInfo, SimulationInfo, SlotInfo} from './types';
 
 const LABELS = {
     SLOT: 'slot',
@@ -10,6 +10,8 @@ const LABELS = {
     WORK_UNIT_CLONE: 'work_unit_clone',
     WORK_UNIT_GEN: 'work_unit_gen',
     WORK_UNIT_PROJECT: 'work_unit_project',
+    USER: 'user',
+    TEAM: 'team',
 };
 
 const mapSlotsInfo = (slots: SlotInfo[]): PrometheusMetric[] => slots.map((slot) => [
@@ -110,13 +112,55 @@ const mapQueuesInfo = (queues: QueueInfo[]): PrometheusMetric[] => queues.map((q
     ];
 }).flat(1);
 
-const mapToPromMetrics = ({slotsInfo, queuesInfo}: { slotsInfo?: SlotInfo[], queuesInfo?: QueueInfo[] }): PrometheusMetric[] => {
+
+const mapSimulationInfo = (simulations: SimulationInfo[]): PrometheusMetric[] => simulations.map((sim) => {
+    const labels = [
+        {name: LABELS.SLOT, value: sim.slot},
+        {name: LABELS.WORK_UNIT_PROJECT, value: sim.project},
+        {name: LABELS.WORK_UNIT_CLONE, value: sim.clone},
+        {name: LABELS.WORK_UNIT_RUN, value: sim.run},
+        {name: LABELS.WORK_UNIT_GEN, value: sim.gen},
+        {name: LABELS.USER, value: sim.user},
+        {name: LABELS.TEAM, value: sim.team},
+        {name: LABELS.WORK_UNIT, value: `${sim.project}(${sim.run},${sim.clone},${sim.gen})`},
+    ];
+    return [
+        {
+            name: 'simulation_eta_seconds',
+            value: sim.eta,
+            type: PrometheusMetricType.GAUGE,
+            labels,
+        },
+        {
+            name: 'simulation_deadline_timestamp',
+            value: sim.deadline,
+            type: PrometheusMetricType.GAUGE,
+            labels,
+        },
+        {
+            name: 'simulation_timeout_timestamp',
+            value: sim.timeout,
+            type: PrometheusMetricType.GAUGE,
+            labels,
+        },
+        {
+            name: 'simulation_start_timestamp',
+            value: new Date(sim.start_time).getTime()/1000,
+            type: PrometheusMetricType.GAUGE,
+            labels,
+        },
+    ];
+}).flat(1);
+
+const mapToPromMetrics = ({slotsInfo, queuesInfo, simulationsInfo}: FAHInfo): PrometheusMetric[] => {
     const slotMetrics: PrometheusMetric[] = slotsInfo ? mapSlotsInfo(slotsInfo) : [];
     const queueMetrics: PrometheusMetric[] = queuesInfo ? mapQueuesInfo(queuesInfo) : [];
+    const simulationInfo: PrometheusMetric[] = simulationsInfo ? mapSimulationInfo(simulationsInfo) : [];
 
     return [
         ...slotMetrics,
         ...queueMetrics,
+        ...simulationInfo,
     ];
 };
 

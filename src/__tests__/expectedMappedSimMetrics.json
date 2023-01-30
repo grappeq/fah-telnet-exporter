@@ -1,0 +1,314 @@
+[
+  {
+    "name": "simulation_eta_seconds",
+    "value": 15714,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 0
+      },
+      {
+        "name": "work_unit_project",
+        "value": 16977
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1465
+      },
+      {
+        "name": "work_unit_run",
+        "value": 99
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 353
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "16977(99,1465,353)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_deadline_timestamp",
+    "value": 1675446822,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 0
+      },
+      {
+        "name": "work_unit_project",
+        "value": 16977
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1465
+      },
+      {
+        "name": "work_unit_run",
+        "value": 99
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 353
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "16977(99,1465,353)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_timeout_timestamp",
+    "value": 1675274022,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 0
+      },
+      {
+        "name": "work_unit_project",
+        "value": 16977
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1465
+      },
+      {
+        "name": "work_unit_run",
+        "value": 99
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 353
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "16977(99,1465,353)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_start_timestamp",
+    "value": 1675014822,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 0
+      },
+      {
+        "name": "work_unit_project",
+        "value": 16977
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1465
+      },
+      {
+        "name": "work_unit_run",
+        "value": 99
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 353
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "16977(99,1465,353)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_eta_seconds",
+    "value": 5950,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 1
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18913
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1
+      },
+      {
+        "name": "work_unit_run",
+        "value": 425
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 19
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "18913(425,1,19)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_deadline_timestamp",
+    "value": 1675187622,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 1
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18913
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1
+      },
+      {
+        "name": "work_unit_run",
+        "value": 425
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 19
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "18913(425,1,19)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_timeout_timestamp",
+    "value": 1675101222,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 1
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18913
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1
+      },
+      {
+        "name": "work_unit_run",
+        "value": 425
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 19
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "18913(425,1,19)"
+      }
+    ]
+  },
+  {
+    "name": "simulation_start_timestamp",
+    "value": 1675014822,
+    "type": "gauge",
+    "labels": [
+      {
+        "name": "slot",
+        "value": 1
+      },
+      {
+        "name": "work_unit_project",
+        "value": 18913
+      },
+      {
+        "name": "work_unit_clone",
+        "value": 1
+      },
+      {
+        "name": "work_unit_run",
+        "value": 425
+      },
+      {
+        "name": "work_unit_gen",
+        "value": 19
+      },
+      {
+        "name": "user",
+        "value": "Anonymous"
+      },
+      {
+        "name": "team",
+        "value": "0"
+      },
+      {
+        "name": "work_unit",
+        "value": "18913(425,1,19)"
+      }
+    ]
+  }
+]

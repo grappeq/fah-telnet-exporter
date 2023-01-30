@@ -2,7 +2,8 @@ import {describe, it} from 'mocha';
 import {expect} from 'chai';
 import mapToPromMetrics from '../mapToPromMetrics';
 import sampleFetchedMetrics1 from './sample-fetched-metrics-1.json';
-import expectedMappedQueueMetrics from './mappedQueueMetrics.json'
+import expectedMappedQueueMetrics from './expectedMappedQueueMetrics.json';
+import expectedMappedSimMetrics from './expectedMappedSimMetrics.json';
 
 
 describe('mapToPromMetrics', function () {
@@ -11,7 +12,7 @@ describe('mapToPromMetrics', function () {
         const {slotsInfo} = sampleFetchedMetrics1;
 
         // WHEN
-        const mappedMetrics = mapToPromMetrics({slotsInfo});
+        const mappedMetrics = mapToPromMetrics({slotsInfo, queuesInfo: [], simulationsInfo: []});
 
         // THEN
         expect(mappedMetrics).to.deep.include({
@@ -66,7 +67,7 @@ describe('mapToPromMetrics', function () {
 
     it('should handle empty info', async () => {
         // GIVEN WHEN
-        const mappedMetrics = mapToPromMetrics({slotsInfo: [], queuesInfo: []});
+        const mappedMetrics = mapToPromMetrics({slotsInfo: [], queuesInfo: [], simulationsInfo: []});
 
         // THEN
         expect(mappedMetrics).to.be.an('array').that.is.empty;
@@ -77,10 +78,23 @@ describe('mapToPromMetrics', function () {
         const {queuesInfo} = sampleFetchedMetrics1;
 
         // WHEN
-        const mappedMetrics = mapToPromMetrics({queuesInfo});
+        const mappedMetrics = mapToPromMetrics({slotsInfo: [], queuesInfo, simulationsInfo: []});
 
         // THEN
         expectedMappedQueueMetrics.forEach(metric => {
+            expect(mappedMetrics).to.deep.include(metric);
+        });
+    });
+
+    it('should properly map simulation info', async () => {
+        // GIVEN
+        const {simulationsInfo} = sampleFetchedMetrics1;
+
+        // WHEN
+        const mappedMetrics = mapToPromMetrics({slotsInfo: [], queuesInfo: [], simulationsInfo});
+
+        // THEN
+        expectedMappedSimMetrics.forEach(metric => {
             expect(mappedMetrics).to.deep.include(metric);
         });
     });

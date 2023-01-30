@@ -40,7 +40,7 @@ export interface QueueInfo {
 export interface FAHInfo {
     slotsInfo: SlotInfo[],
     queuesInfo: QueueInfo[],
-    simulationInfo: object,
+    simulationsInfo: SimulationInfo[],
 }
 
 export interface SimulationInfo {

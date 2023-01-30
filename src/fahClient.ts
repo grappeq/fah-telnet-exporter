@@ -75,8 +75,8 @@ export default class FahTelnetClient {
         const {content: queuesInfo} = await this.fetchInfo(Command.QueueInfo) as ParsedFahMessage<QueueInfo[] | any>;
         const slotIds = slotsInfo instanceof Array ? slotsInfo.map(slot => parseInt(slot.id)) : [];
         slotIds.sort();
-        const simulationInfo = await this.fetchAllSimulationInfo(slotIds);
-        return {slotsInfo, simulationInfo, queuesInfo};
+        const simulationsInfo = await this.fetchAllSimulationInfo(slotIds);
+        return {slotsInfo, simulationsInfo, queuesInfo};
     }
 
     async execAuth(): Promise<void> {

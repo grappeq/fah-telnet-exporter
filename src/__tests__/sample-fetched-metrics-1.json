@@ -82,5 +82,46 @@
       "basecredit": "55859"
     }
   ],
-  "simulationInfo": {}
+  "simulationsInfo": [
+    {
+      "user": "Anonymous",
+      "team": "0",
+      "project": 16977,
+      "run": 99,
+      "clone": 1465,
+      "gen": 353,
+      "core_type": 168,
+      "core": "GRO_A8",
+      "total_iterations": 100,
+      "iterations_done": 2,
+      "energy": 0,
+      "temperature": 0,
+      "start_time": "2023-01-29T17:53:42Z",
+      "timeout": 1675274022,
+      "deadline": 1675446822,
+      "eta": 15714,
+      "progress": 0.026997,
+      "slot": 0
+    },
+    {
+      "user": "Anonymous",
+      "team": "0",
+      "project": 18913,
+      "run": 425,
+      "clone": 1,
+      "gen": 19,
+      "core_type": 34,
+      "core": "OPENMM_22",
+      "total_iterations": 100,
+      "iterations_done": 5,
+      "energy": 0,
+      "temperature": 0,
+      "start_time": "2023-01-29T17:53:42Z",
+      "timeout": 1675101222,
+      "deadline": 1675187622,
+      "eta": 5950,
+      "progress": 0.055556,
+      "slot": 1
+    }
+  ]
 }
