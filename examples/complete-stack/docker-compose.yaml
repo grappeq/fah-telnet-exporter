@@ -1,9 +1,8 @@
 version: "3.9"
 services:
   fah-telnet-exporter:
+    image: grappeq/fah-telnet-exporter
     restart: unless-stopped
-    build:
-      ../../
     ports:
       - 3004:3003
   prometheus:
@@ -33,7 +32,6 @@ services:
       - fah-data:/opt/fahclient/work
     ports:
       - 7397:7396
-      - 36331:36330
 
 volumes:
   prometheus-data:

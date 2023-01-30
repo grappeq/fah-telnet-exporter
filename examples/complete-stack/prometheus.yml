@@ -1,30 +1,13 @@
 global:
-  scrape_interval: 15s
+  scrape_interval: 1m
 
 scrape_configs:
   - job_name: "prometheus"
-    scrape_interval: 1m
     static_configs:
     - targets: ["localhost:9090"]
-#  - job_name: "fah"
-#    static_configs:
-#    - targets: ["fah-telnet-exporter:3003"]
-#    params:
-#      port: ["36330"]
-#      target: ["folding-at-home-cpu"]
-#
-  - job_name: 'fah2'
+  - job_name: "fah"
     static_configs:
-      - targets:
-          - folding-at-home-cpu:36330
-          - switch.local # SNMP device.
-    metrics_path: /snmp
+    - targets: ["fah-telnet-exporter:3003"]
     params:
-      module: [if_mib]
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: 127.0.0.1:9116  # The SNMP exporter's real hostname:port.
+      port: ["36330"]
+      target: ["folding-at-home-cpu"]
