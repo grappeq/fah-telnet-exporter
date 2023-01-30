@@ -16,5 +16,6 @@ function normalizePort(val: string) {
 
 export default {
     fahAuthPassword: process.env.FAH_AUTH_PASSWORD || undefined,
+    metricPrefix: process.env.METRIC_PREFIX || 'fah_',
     httpServerPort: normalizePort(process.env.PORT || '3003'),
 };

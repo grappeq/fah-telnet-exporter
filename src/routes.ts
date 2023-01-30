@@ -39,7 +39,7 @@ router.get('/metrics', async (req, res, next) => {
     try {
         const fetchedInfo = await handleFetchingMetrics(req, res);
         const mappedMetrics = mapToPromMetrics(fetchedInfo);
-        const renderedMetrics = renderPromMetrics(mappedMetrics);
+        const renderedMetrics = renderPromMetrics(mappedMetrics, config.metricPrefix);
         res.send(renderedMetrics);
     } catch (e) {
         next(e);

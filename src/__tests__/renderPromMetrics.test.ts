@@ -10,8 +10,8 @@ describe('renderPromMetrics', function () {
             value: 2137,
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# HELP fah_fancy_metric Fancy Metric\n' +
-            'fah_fancy_metric 2137'
+            '# HELP fancy_metric Fancy Metric\n' +
+            'fancy_metric 2137'
         );
     });
 
@@ -22,8 +22,8 @@ describe('renderPromMetrics', function () {
             value: 2137,
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# TYPE fah_fancy_metric gauge\n' +
-            'fah_fancy_metric 2137'
+            '# TYPE fancy_metric gauge\n' +
+            'fancy_metric 2137'
         );
     });
 
@@ -36,7 +36,25 @@ describe('renderPromMetrics', function () {
             ]
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            'fah_fancy_metric{jp2="gmd"} 2137'
+            'fancy_metric{jp2="gmd"} 2137'
+        );
+    });
+
+    it('should use configured prefix', async () => {
+        const metric: PrometheusMetric = {
+            name: "fancy_metric",
+            value: 2137,
+            labels: [
+                {name: 'jp1', value: 'trial'},
+                {name: 'jp2', value: 'gmd'},
+            ],
+            type: PrometheusMetricType.HISTOGRAM,
+            description: "Fancy Metric",
+        };
+        expect(renderPromMetrics([metric], 'lol_')).to.deep.equal(
+            '# HELP lol_fancy_metric Fancy Metric\n' +
+            '# TYPE lol_fancy_metric histogram\n' +
+            'lol_fancy_metric{jp1="trial",jp2="gmd"} 2137'
         );
     });
 
@@ -50,7 +68,7 @@ describe('renderPromMetrics', function () {
             ]
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137'
+            'fancy_metric{jp1="trial",jp2="gmd"} 2137'
         );
     });
 
@@ -66,9 +84,9 @@ describe('renderPromMetrics', function () {
             description: "Fancy Metric",
         };
         expect(renderPromMetrics([metric])).to.deep.equal(
-            '# HELP fah_fancy_metric Fancy Metric\n' +
-            '# TYPE fah_fancy_metric histogram\n' +
-            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137'
+            '# HELP fancy_metric Fancy Metric\n' +
+            '# TYPE fancy_metric histogram\n' +
+            'fancy_metric{jp1="trial",jp2="gmd"} 2137'
         );
     });
 
@@ -99,14 +117,14 @@ describe('renderPromMetrics', function () {
         ];
         const renderedOutput = renderPromMetrics(metrics);
         expect(renderedOutput).to.deep.equal(
-            '# HELP fah_fancy_metric Fancy Metric\n' +
-            '# TYPE fah_fancy_metric histogram\n' +
-            'fah_fancy_metric{jp1="trial",jp2="gmd"} 2137\n' +
+            '# HELP fancy_metric Fancy Metric\n' +
+            '# TYPE fancy_metric histogram\n' +
+            'fancy_metric{jp1="trial",jp2="gmd"} 2137\n' +
             '\n' +
-            '# HELP fah_another_metric Another Metric\n' +
-            'fah_another_metric 2137\n' +
+            '# HELP another_metric Another Metric\n' +
+            'another_metric 2137\n' +
             '\n' +
-            'fah_the_best_metric{kupa="100"} 2137'
+            'the_best_metric{kupa="100"} 2137'
         );
     });
 });
