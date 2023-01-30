@@ -1,14 +1,13 @@
 # F@H Telnet Exporter for Prometheus
-
-Service that fetches Folding@Home client metrics using [F@H telnet interface](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API) and exposes them to Prometheus in [the text-based format](https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format). Data scraped by Prometheus can be later exposed to e.g. Grafana to display beautiful dashboards detailing progress of our folding clients. Service can be run standalone or as a Docker container.
-
-Exporter is stateless, and a single instance can retrieve data from multiple folding clients.
+Prometheus exporter for Folding@Home client metrics. Can be run standalone or as a Docker container. Exporter is stateless, and a single instance can retrieve data from multiple folding clients.
 
 ## Usage
 ### Prerequisites
-Ensure your F@H client (or clients) is accepting telnet connection from the exporter. This can be accomplished in 2 ways:
-1. Setting the `command-allow-no-pass` option to an IP range that includes the IP of the FAH Exporter (e.g. `0/0` will allow all addresses)
-2. Setting a password using the `password` option. In that case you will need to make sure to provide this password to the exporter.
+Configure your F@H client to accept requests from the exporter:
+1. Set `allow` option to an IP range that includes the IP of the FAH Exporter (e.g. `0/0` will allow all addresses).
+2. Configure authorization. Here you have 2 options:
+* Setting the `command-allow-no-pass` option to an IP range that includes the IP of the FAH Exporter (e.g. `0/0` will allow all addresses)
+* Setting a password using the `password` option. In that case you will need to make sure to provide this password to the exporter.
 
 Also, make sure your `command-enable` is set to `true` (that should be the default setting).
 ### Running
@@ -87,6 +86,9 @@ scrape_configs:
       - target_label: __address__
         replacement: <fah-telnet-exporter-address>:3003
 ``` 
+
+## How it works
+Exporter is a stateless service that fetches Folding@Home client metrics using [F@H telnet interface](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API) and exposes them to Prometheus in [the text-based format](https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format) via `/metrics` endpoint.
 
 ## Example: F@H + Prometheus + Exporter
 Below you can see an example Docker Compose config of a Folding@Home client container running together with Prometheus and the exporter. To get it started, just execute `docker compose up -d` after creating appropriate files.
