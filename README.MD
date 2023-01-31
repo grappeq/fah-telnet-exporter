@@ -93,7 +93,7 @@ Exporter is a stateless service that fetches Folding@Home client metrics using [
 ## Example: F@H + Prometheus + Exporter
 Below you can see an example Docker Compose config of a Folding@Home client container running together with Prometheus and the exporter. To get it started, just execute `docker compose up -d` after creating appropriate files.
 
-##### docker-compose.yaml
+#### docker-compose.yaml
 ```yaml
 version: "3.9"
 services:
@@ -137,7 +137,7 @@ volumes:
 
 ```
 
-##### prometheus.yaml
+#### prometheus.yaml
 ```yaml
 global:
   scrape_interval: 1m
@@ -153,3 +153,6 @@ scrape_configs:
       port: ["36330"]
       target: ["folding-at-home-cpu"]
 ```
+
+## Grafana dashboard
+If you don't feel like configuring a Grafana dashboard from scratch, you can just import [this one](./examples/grafana/grafana-fah-dashboard.json).
