@@ -1,6 +1,8 @@
 # F@H Telnet Exporter for Prometheus
 Prometheus exporter for Folding@Home client metrics. Can be run standalone or as a Docker container. Exporter is stateless, and a single instance can retrieve data from multiple folding clients.
 
+![grafana dashboard screenshot](./examples/grafana/grafana-screenshot.png)
+
 ## Usage
 ### Prerequisites
 Configure your F@H client to accept requests from the exporter:
@@ -155,4 +157,4 @@ scrape_configs:
 ```
 
 ## Grafana dashboard
-If you don't feel like configuring a Grafana dashboard from scratch, you can just import [this one](./examples/grafana/grafana-fah-dashboard.json).
+If you like the Grafana dashboard from the screenshot at the top of the page, you can import it using [this file](./examples/grafana/grafana-fah-dashboard.json).

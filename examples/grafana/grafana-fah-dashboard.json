@@ -109,7 +109,29 @@
           "color": {
             "mode": "thresholds"
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "FINISHING": {
+                  "color": "blue",
+                  "index": 0
+                },
+                "PAUSED": {
+                  "color": "yellow",
+                  "index": 2
+                },
+                "READY": {
+                  "color": "super-light-green",
+                  "index": 3
+                },
+                "RUNNING": {
+                  "color": "green",
+                  "index": 1
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -149,7 +171,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "fah_queue_state{instance=\"$instance\", slot=\"$slot\"}",
+          "expr": "fah_slot_status{instance=\"$instance\", slot=\"$slot\"}",
           "format": "time_series",
           "legendFormat": "__auto",
           "range": true,
@@ -162,7 +184,8 @@
           "id": "labelsToFields",
           "options": {
             "keepLabels": [
-              "state"
+              "state",
+              "status"
             ],
             "mode": "columns"
           }
@@ -247,7 +270,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
@@ -566,8 +589,12 @@
             {
               "options": {
                 "FINISHING": {
-                  "color": "dark-green",
+                  "color": "blue",
                   "index": 3
+                },
+                "PAUSED": {
+                  "color": "yellow",
+                  "index": 4
                 },
                 "READY": {
                   "color": "super-light-green",
@@ -612,7 +639,7 @@
         "x": 0,
         "y": 10
       },
-      "id": 52,
+      "id": 61,
       "options": {
         "alignValue": "center",
         "legend": {
@@ -637,7 +664,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "fah_queue_state{slot=\"$slot\", instance=\"$instance\"}",
+          "expr": "fah_slot_status{slot=\"$slot\", instance=\"$instance\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -651,7 +678,8 @@
           "id": "labelsToFields",
           "options": {
             "keepLabels": [
-              "state"
+              "state",
+              "status"
             ],
             "mode": "columns"
           }
@@ -673,7 +701,7 @@
                 "handlerKey": "field.label"
               },
               {
-                "fieldName": "state",
+                "fieldName": "status",
                 "handlerKey": "field.value"
               }
             ]
@@ -919,13 +947,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Folding@Home",
   "uid": "A2aNYGAVk",
-  "version": 56,
+  "version": 60,
   "weekStart": ""
 }
