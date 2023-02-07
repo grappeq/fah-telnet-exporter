@@ -81,7 +81,7 @@ scrape_configs:
 ``` 
 
 ## How it works
-Exporter is a stateless service that fetches Folding@Home client metrics using [F@H telnet interface](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API) and exposes them to Prometheus in [the text-based format](https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format) via `/metrics` endpoint.
+Exporter is a stateless service that fetches Folding@Home client metrics using [F@H telnet interface](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API) and exposes them to Prometheus in [the text-based format](https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format) via `/metrics` endpoint. It uses the [multi-target exporter pattern](https://prometheus.io/docs/guides/multi-target-exporter/) allowing you to expose metrics from multiple F@H clients using a single instance of the exporter.
 
 ### API
 Exporter exposes 2 HTTP endpoints:
